@@ -1,11 +1,11 @@
 # SGI 2023/2024 - TP3
 
-## Group: T0xG0y
+## Group: T07xG09
 
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| Lia Vieira       | 202005042 | up202005042@edu.fe.up.pt  |
-| Hugo Gomes       | 202004343 | up202004343@up.pt  |
+| Name             | Number    |
+| ---------------- | --------- |
+| Lia Vieira       | 202005042 |
+| Hugo Gomes       | 202004343 |
 ----
 ## Images
 
