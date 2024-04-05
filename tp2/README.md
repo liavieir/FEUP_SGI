@@ -2,10 +2,10 @@
 
 ## Group: T07xG09
 
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| Hugo Gomes       | 202004343 | up202004343@up.pt  |
-| Lia Vieira       | 202005042 | up202005042@edu.fe.up.pt  |
+| Name             | Number    |
+| ---------------- | --------- |
+| Hugo Gomes       | 202004343 |
+| Lia Vieira       | 202005042 |
 
 ----
 ## Project information
