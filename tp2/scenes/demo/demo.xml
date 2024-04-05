@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<yaf> 
+
+	<!-- Credits of the original file go to Group 1, class 1 of course LAIG school year 2013/2014, FEUP, University of Porto -->
+	
+    <globals background="0 0 0 1" ambient="0 0 0 1" /> 
+
+    <fog color="1.0 1.0 1.0 1.0" near="0.0" far="100.0" />
+
+    <cameras initial="top" > 
+        <perspective id="perspective" 
+            angle="60" 
+            near="0.1" 
+            far="1000" 
+            location="40 50 50" 
+            target="0 0.0 0" /> 
+
+        <perspective id="cameraView" 
+            angle="60" 
+            near="0.1" 
+            far="1000" 
+            location="-10 11 23" 
+            target="0 0 0" />
+        
+        <perspective id="perspective2" 
+            angle="60" 
+            near="0.1" 
+            far="1000" 
+            location="-80 30 -90"
+            target="-85 10 -101" />
+    </cameras> 
+
+    <textures>        
+        <texture id="ringFloor" filepath="scenes/demo/sceneImages/ringFloor.jpg" />
+        <texture id="ringFloorSides" filepath="scenes/demo/sceneImages/ringFloor.jpg" />
+        <texture id="punchingBagBlack" filepath="scenes/demo/sceneImages/punchingBagBlack.jpg" />
+        <texture id="punchingBagRed" filepath="scenes/demo/sceneImages/punchingBagRed.jpg" />
+        <texture id="strap" filepath="scenes/demo/sceneImages/strap.jpg" />
+        <texture id="ringPost" filepath="scenes/demo/sceneImages/ringPost.jpg" />
+        <texture id="wood" filepath="scenes/demo/sceneImages/table.png" />
+        <texture id="lightWood" filepath="scenes/demo/sceneImages/lightWood.jpg" />
+        <texture id="skyboxSides" filepath="scenes/demo/sceneImages/bricks.jpg" />
+        <texture id="truss" filepath="scenes/demo/sceneImages/truss.jpg" />
+        <texture id="seats" filepath="scenes/demo/sceneImages/seats.jpg" />
+        <texture id="steel" filepath="scenes/demo/sceneImages/steel.jpg" />
+        <texture id="video" filepath="scenes/demo/sceneImages/boxingHighlights.mp4" isVideo="true"/>
+        <texture id="rubberHeight" filepath="scenes/demo/sceneImages/RubberHeight.png" />
+        <texture id="rubberColor" filepath="scenes/demo/sceneImages/RubberColor.jpg" />
+        <texture id="rubberSpec" filepath="scenes/demo/sceneImages/RubberSpec.jpg" />
+        <texture id="vase" filepath="scenes/demo/sceneImages/vase.jpg" />
+    </textures> 
+
+    <materials> 
+
+        <material id="ringFloor" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="ringFloor" 
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="ringFloorSides" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="ringFloor" 
+            texlength_s="2" 
+            texlength_t="1" />
+
+        <material id="ringPost" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="ringPost" 
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="punchingBagBlack" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="punchingBagBlack" 
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="punchingBagRed" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="punchingBagRed" 
+            texlength_s="1" 
+            texlength_t="1" />
+
+        <material id="strap" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="strap" 
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "true" />
+
+        <material id="support"
+            color="0.0 0.0 0.0 1.0" 
+            emissive="0.0 0.0 0.0 0.0"
+            specular="0 0 0 0"
+            shininess="10"
+            texlength_s="1"
+            texlength_t="1" />
+
+        <material id="truss" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="truss" 
+            texlength_s="1" 
+            texlength_t="1"
+            wireframe = "true" />
+        
+        <material id="floor"
+            color="1 1 1 1.0" 
+            emissive="0.0 0.0 0.0 0.0"
+            specular="0 0 0 0"
+            shininess="10"
+            textureref="lightWood"
+            texlength_s="1"
+            texlength_t="1" />
+
+        <material id="rope"
+            color="0.1 0 0 1.0" 
+            emissive="0.1 0 0 1.0"
+            specular="0 0 0 0"
+            shininess="1"
+            texlength_s="1"
+            texlength_t="1" 
+            twosided="true"/>
+
+        <material id="wood"
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0"
+            specular="0 0 0 0"
+            shininess="10"
+            textureref="wood"
+            texlength_s="1"
+            texlength_t="1" />
+
+        <material id="lightWood"
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0"
+            specular="0 0 0 0"
+            shininess="10"
+            textureref="lightWood"
+            texlength_s="1"
+            texlength_t="1" />
+
+        <material id="seats"
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0"
+            specular="0 0 0 0"
+            shininess="10"
+            textureref="seats"
+            texlength_s="1"
+            texlength_t="1" />
+
+        <material id="steel"
+            color="0.7 0.7 0.7 1.0"
+            emissive="0.1 0.1 0.1 1.0"
+            specular="0.2 0.2 0.2 1.0"
+            shininess="10"
+            textureref="steel"
+            texlength_s="1"
+            texlength_t="1" 
+        />
+
+        <material id="vase" 
+            color="0.8 0.8 0.8 1.0" 
+            emissive="0.0 0.0 0.0 0.0" 
+			specular="0 0 0 0" 
+            shininess="10" 
+            textureref="vase" 
+            texlength_s="1" 
+            texlength_t="1" 
+            twosided = "true" />
+
+        <material id="spotlight"
+            color="0.0 0.0 0.0 1"
+            emissive="0.0 0.0 0.0 1.0"
+            specular="0 0 0 0"
+            shininess="0"
+            shading="none"/>
+                
+        <material id="rubberBump"
+            color="1.0 1.0 1.0 1.0" 
+            emissive="0.0 0.0 0.0 1.0"
+            specular="0 0 0 0"
+            shininess="0"
+            textureref="rubberColor"
+            bumpref="rubberHeight"
+            specularref="rubberSpec"
+            bumpscale="0.9"
+            texlength_s="1"
+            texlength_t="1" 
+            twosided="true"/>
+        
+        <material id="video1"
+            color="1.0 1.0 1.0 1.0" 
+            emissive="0.0 0.0 0.0 1.0"
+            specular="0 0 0 0"
+            shininess="10"
+            textureref="video"
+            texlength_s="1"
+            texlength_t="1" 
+            />
+
+			
+    </materials> 
+
+    <graph rootid="scene"> 
+		<lod id="camera" near="0" far="1000" > 
+            <noderef id="cameraClose" mindist="30" />
+            <noderef id="cameraFar" mindist="110"/>
+        </lod>
+
+        <node id="scene"> 
+            <children> 
+                <lodref id="camera" />
+                <noderef id="boxingRing" /> 
+                <noderef id="punchingBags" />
+                <noderef id="stairs1" />
+                <noderef id="stairs2" />
+                <noderef id="trussStructure" />
+                <noderef id="stool1" />
+                <noderef id="stool2" />
+                <noderef id="tv" />
+                <noderef id="seatsLeft" />
+                <noderef id="seatsRight" />
+                <noderef id="seatsBack" />
+                <noderef id="seatsFront" />
+                <noderef id="sky" />
+                <noderef id="spotlights" />
+                <noderef id="chair1" />
+                <noderef id="chair2" />
+                <noderef id="carpet" />
+                <noderef id="cup" />
+                
+				 
+
+                <directionallight id="directional"
+                    color="1 1 1 1"
+                    intensity="0.3"
+                    position="0 50 0"
+                    castshadow="false"
+                />
+
+                <directionallight id="directional2"
+                    color="1 1 1 1"
+                    intensity="0.5"
+                    position="-50 50 -50"
+                    castshadow="false"
+                />
+
+                <directionallight id="directional5"
+                    color="1 1 1 1"
+                    intensity="0.3"
+                    position="50 50 50"
+                    castshadow="false"
+                />
+                
+                <spotlight id="spotlight1" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="10000.0"
+                    distance="50"
+                    decay="2.0"
+                    castshadow="true"
+                    position="21.5 29 0" 
+                    target="-12 0 2"
+                    penumbra="1.0"
+                    angle="10" 
+                /> 
+
+                <spotlight id="spotlight2" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="10000.0"
+                    distance="50"
+                    decay="2.0"
+                    castshadow="true"
+                    position="-21.5 29 0" 
+                    target="14 0 2"
+                    penumbra="1.0"
+                    angle="10" 
+                /> 
+
+                <spotlight id="spotlight3" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="10000.0"
+                    distance="50"
+                    decay="2.0"
+                    castshadow="true"
+                    position="0 29 -21.5" 
+                    target="0 0 10"
+                    penumbra="1.0"
+                    angle="10" 
+                /> 
+
+                <spotlight id="spotlight4" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="10000.0"
+                    distance="50"
+                    decay="2.0"
+                    castshadow="true"
+                    position="0 29 21.5" 
+                    target="0 0 -12"
+                    penumbra="1.0"
+                    angle="10" 
+                /> 
+
+                <spotlight id="spotlight5" enabled="true" 
+                    color="1.0 1.0 1.0 1" 
+                    intensity="10000.0"
+                    distance="60"
+                    decay="2.0"
+                    castshadow="true"
+                    position="-20 29 21.5" 
+                    target="10 0 30"
+                    penumbra="1.0"
+                    angle="10" 
+                /> 
+
+            </children> 
+        </node>
+
+        <node id="cup">
+            <transforms>
+                <scale value3="2 2 2" />
+				<translate value3="70 6.5 -70" />
+            </transforms> 
+            <materialref id="vase" />
+            <children>
+                <noderef id="cupFront" />
+                <noderef id="cupBack" />
+            </children>
+        </node>
+
+        <node id="cupBack">
+            <transforms>
+                <scale value3="1 1 -1" />
+            </transforms>
+            <children>
+                <noderef id="cupFront" />
+            </children>
+        </node>
+
+
+        <node id="cupFront">
+            <transforms>
+                <scale value3="3 3 3" />
+            </transforms> 
+            <children>
+                <primitive>
+                    <nurbs degree_u="3" degree_v="3" parts_u="30" parts_v="20" distance="0.0">
+                        <controlpoint xx="-0.5" yy="-1.0" zz="0" />
+                        <controlpoint xx="-1.0" yy="0.0" zz="0" />
+                        <controlpoint xx="-0.125" yy="0.5" zz="0" />
+                        <controlpoint xx="-0.25" yy="1.0" zz="0" />
+
+                        
+                        <controlpoint xx="-0.45" yy="-1.0" zz="0.5" />
+                        <controlpoint xx="-0.45" yy="-0.5" zz="1.0" />
+                        <controlpoint xx="-0.45" yy="-0.5" zz="0" />
+                        <controlpoint xx="-0.25" yy="1.0" zz="0.35" />
+
+                        
+                        <controlpoint xx="0.45" yy="-1.0" zz="0.5" />
+                        <controlpoint xx="0.45" yy="-1.0" zz="0.5" />
+                        <controlpoint xx="0.45" yy="-0.5" zz="0" />
+                        <controlpoint xx="0.25" yy="1.0" zz="0.35" />
+
+                        
+                        <controlpoint xx="0.5" yy="-1.0" zz="0.0" />
+                        <controlpoint xx="1.0" yy="0.0" zz="0.0" />
+                        <controlpoint xx="0.125" yy="0.5" zz="0.0" />
+                        <controlpoint xx="0.25" yy="1.0" zz="0.0" />
+                            
+                        </nurbs>
+                </primitive>
+            </children>
+        </node>
+
+
+        <node id="rectangleBack"> 
+            <materialref id="ringFloorSides" />
+            <transforms>
+				<translate value3="0 0 -5" />
+				<rotate value3="0 180.0 0.0" />
+            </transforms> 
+            <children>   
+                <primitive>          
+                    <rectangle xy1="-5 -1" xy2="5 1" />
+                </primitive> 
+            </children> 
+        </node>
+
+        <node id="rectangleFront"> 
+            <materialref id="ringFloorSides" />
+            <transforms>
+				<translate value3="0 0 5" />
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <rectangle xy1="-5 -1" xy2="5 1" /> 
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="rectangleBottom"> 
+            <materialref id="ringFloor" />
+            <transforms>
+				<rotate value3="90 0.0 0.0" />
+            </transforms> 
+
+            <children>   
+                <primitive>          
+                    <rectangle xy1="-5 -5" xy2="5 5" /> 
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="rectangleTop"> 
+            <materialref id="ringFloor" />
+            <transforms>
+				<translate value3="0 1 0" />
+				<rotate value3="-90 0.0 0.0" />
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <rectangle xy1="-5 -5" xy2="5 5" /> 
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="rectangleLeft"> 
+            <materialref id="ringFloorSides" />
+            <transforms>
+				<translate value3="-5 0 0" />
+				<rotate value3="0.0 -90.0 0.0" />
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <rectangle xy1="-5 -1" xy2="5 1" /> 
+                </primitive>
+            </children> 
+        </node>
+		
+		<node id="rectangleRight"> 
+            <materialref id="ringFloorSides" />
+            <transforms>
+				<translate value3="5 0 0" />
+				<rotate value3="0.0 90.0 0.0" />
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <rectangle xy1="-5 -1" xy2="5 1" /> 
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="ring">
+            <children>            
+                <noderef id="rectangleBack" /> 
+				<noderef id="rectangleFront" /> 
+				<noderef id="rectangleBottom" />
+				<noderef id="rectangleTop" />			
+				<noderef id="rectangleLeft" />
+				<noderef id="rectangleRight" />
+            </children> 
+        </node>
+
+        <node id="boxingRing">
+
+            <transforms>
+                <translate value3="0 3 0" />
+                <scale value3="3 3 3" />
+            </transforms>
+
+            <children>            
+                <noderef id="ring" /> 
+                <noderef id="post1" />
+                <noderef id="post2" />
+                <noderef id="post3" />
+                <noderef id="post4" />
+                <noderef id="ropeBack" />
+                <noderef id="ropeFront" />
+                <noderef id="ropeLeft" />
+                <noderef id="ropeRight" />
+            </children> 
+        </node>
+
+        <node id="post1"> 
+            
+            <transforms>
+                <translate value3="-4.2 1.75 -4.2" />
+            </transforms>
+
+            <materialref id="ringPost" />
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.15" top="0.15" height="2.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="post2"> 
+            
+            <transforms>
+                <translate value3="4.2 1.75 4.2" />
+            </transforms>
+
+            <materialref id="ringPost" />
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.15" top="0.15" height="2.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="post3"> 
+            
+            <transforms>
+                <translate value3="4.2 1.75 -4.2" />
+            </transforms>
+
+            <materialref id="ringPost" />
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.15" top="0.15" height="2.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="post4"> 
+            
+            <transforms>
+                <translate value3="-4.2 1.75 4.2" />
+            </transforms>
+
+            <materialref id="ringPost" />
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.15" top="0.15" height="2.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="rope">
+            
+            <materialref id="rope" />
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.08" top="0.08" height="8.2" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="ropeTop"> 
+            
+            <transforms>
+                <translate value3="1 0 0" />
+            </transforms>
+
+            <children>   
+                <noderef id="rope" />
+            </children>
+        </node>
+
+        <node id="ropeMiddle"> 
+            
+            <transforms>
+                <translate value3="0.5 0 0" />
+            </transforms>
+
+            <children>   
+                <noderef id="rope" />
+            </children>
+        </node>
+
+        <node id="ropeBottom"> 
+
+            <children>   
+                <noderef id="rope" />
+            </children>
+        </node>
+
+        <node id="ropeBack"> 
+            
+            <transforms>
+                <translate value3="0 1.5 -4.2" />
+                <rotate value3="0 0 90" />
+            </transforms>
+
+            <children>   
+                <noderef id="ropeTop" />
+                <noderef id="ropeMiddle" />
+                <noderef id="ropeBottom" />
+            </children>
+        </node>
+
+        <node id="ropeFront"> 
+            
+            <transforms>
+                <translate value3="0 1.5 4.2" />
+                <rotate value3="0 0 90" />
+            </transforms>
+
+            <children>   
+                <noderef id="ropeTop" />
+                <noderef id="ropeMiddle" />
+                <noderef id="ropeBottom" />
+            </children>
+        </node>
+
+        <node id="ropeLeft"> 
+            
+            <transforms>
+                <translate value3="-4.2 1.5 0" />
+                <rotate value3="0 90 90" />
+            </transforms>
+
+            <children>   
+                <noderef id="ropeTop" />
+                <noderef id="ropeMiddle" />
+                <noderef id="ropeBottom" />
+            </children>
+        </node>
+
+        <node id="ropeRight"> 
+            
+            <transforms>
+                <translate value3="4.2 1.5 0" />
+                <rotate value3="0 90 90" />
+            </transforms>
+
+            <children>   
+                <noderef id="ropeTop" />
+                <noderef id="ropeMiddle" />
+                <noderef id="ropeBottom" />
+            </children>
+        </node>
+
+        <node id="truss">
+            
+            <children>   
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="1.5 25 1.5" parts_x="2" parts_y="15" parts_z="1"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="truss1">
+            <transforms>
+                <translate value3="-17 10 -17" />
+            </transforms>
+            <children>   
+                <noderef id="truss" />
+            </children>
+        </node>
+
+        <node id="truss2">
+            <transforms>
+                <translate value3="17 10 17" />
+            </transforms>
+            <children>   
+                <noderef id="truss" />
+            </children>
+        </node>
+
+        <node id="truss3">
+            <transforms>
+                <translate value3="17 10 -17" />
+            </transforms>
+            <children>   
+                <noderef id="truss" />
+            </children>
+        </node>
+
+        <node id="truss4">
+            <transforms>
+                <translate value3="-17 10 17" />
+            </transforms>
+            <children>   
+                <noderef id="truss" />
+            </children>
+        </node>
+
+        <node id="trussTop">
+            <children>   
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="1.5 35.5 1.5" parts_x="2" parts_y="20" parts_z="1"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="trussTop1">
+            <transforms>
+                <translate value3="-17 23.2 0" />
+                <rotate value3="-90 0.0 0.0" />
+            </transforms>
+            <children>   
+                <noderef id="trussTop" />
+            </children>
+        </node>
+
+        <node id="trussTop2">
+            <transforms>
+                <translate value3="17 23.2 0" />
+                <rotate value3="-90 0.0 0.0" />
+            </transforms>
+            <children>   
+                <noderef id="trussTop" />
+            </children>
+        </node>
+
+        <node id="trussTop3">
+            <transforms>
+                <translate value3="0 23.2 -17" />
+                <rotate value3="0 0 90" />
+            </transforms>
+            <children>   
+                <noderef id="trussTop" />
+            </children>
+        </node>
+
+        <node id="trussTop4">
+            <transforms>
+                <translate value3="0 23.2 17" />
+                <rotate value3="0 0 90" />
+            </transforms>
+            <children>   
+                <noderef id="trussTop" />
+            </children>
+        </node>
+
+        <node id="trussTop5">
+            <transforms>
+                <translate value3="0 23.2 0" />
+                <rotate value3="0 0 90" />
+            </transforms>
+            <children>   
+                <noderef id="trussTop" />
+            </children>
+        </node>
+
+        <node id="trussStructure">
+            <transforms>
+                <translate value3="0 3.4 0" />
+                <scale value3="1.3 1.2 1.3" />
+            </transforms>
+            <materialref id="truss" />
+            <children>   
+                <noderef id="truss1" />
+                <noderef id="truss2" />
+                <noderef id="truss3" />
+                <noderef id="truss4" />
+                <noderef id="trussTop1" />
+                <noderef id="trussTop2" />
+                <noderef id="trussTop3" />
+                <noderef id="trussTop4" />
+                <noderef id="trussTop5" />
+            </children>
+        </node>
+
+        <node id="carpet">
+
+            <materialref id="rubberBump" />
+
+			<transforms>
+                <translate value3="-40 0.3 40" />
+				<rotate value3="-90 0.0 0.0" />
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <rectangle xy1="0 0" xy2="80 80" />
+                </primitive>
+            </children> 
+        </node>
+		
+        <node id="tape">
+			<transforms>
+				<translate value3="0.1 1.5 0.37" />
+                <rotate value3="-38 0 90" />
+            </transforms> 
+			
+			<materialref id="strap" />
+			
+            <children>             
+                <primitive>
+                    <rectangle xy1="0 0" xy2="0.6 0.2" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="tape2">
+			<transforms>
+				<translate value3="0.1 1.5 -0.37" />
+                <rotate value3="38 0 90" />
+            </transforms> 
+			
+			<materialref id="strap" />
+			
+            <children>             
+                <primitive>
+                    <rectangle xy1="0 0" xy2="0.6 0.2" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="support">
+
+            <materialref id="support" />
+
+            <transforms>
+                <rotate value3="0 -90 0" />
+				<translate value3="-1 2.05 0" />   
+            </transforms> 
+
+            <children>             
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="3 0.2 0.2" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="bagBlack"> 
+
+            <materialref id="punchingBagBlack" />
+
+            <children>   
+                <noderef id="tape" />
+                <noderef id="tape2" />
+                <noderef id="support" />
+                <primitive>          
+                    <cylinder base="0.42" top="0.42" height="3" slices="32" stacks="32" />
+                </primitive> 
+            </children> 
+        </node>
+
+        <node id="bagRed"> 
+
+            <transforms>
+				<translate value3="3 0 0" />
+            </transforms> 
+
+            <materialref id="punchingBagRed" />
+
+            <children>   
+                <noderef id="tape" />
+                <noderef id="tape2" />
+                <noderef id="support" />
+                <primitive>          
+                    <cylinder base="0.42" top="0.42" height="3" slices="32" stacks="32" />
+                </primitive> 
+            </children> 
+        </node>
+
+        <node id="punchingBags">
+
+            <transforms>
+                <translate value3="-85 10 -101" />
+                <scale value3="5 5 5" />
+            </transforms>
+
+            <children>            
+                <noderef id="bagBlack" /> 
+                <noderef id="bagRed" />
+            </children> 
+        </node>
+
+        <node id="stoolLeg1"> 
+
+            <transforms>
+                <translate value3="0.35 -0.75 0" />
+                <rotate value3="0 0 25" />
+            </transforms>
+
+            <children>   
+                <primitive>          
+                    <cylinder base="0.1" top="0.1" height="1.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="stoolLeg2"> 
+            <transforms>
+                <translate value3="-0.35 -0.75 0" />
+                <rotate value3="0 0 -25" />
+            </transforms>
+            <children>   
+                <primitive>          
+                    <cylinder base="0.1" top="0.1" height="1.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="stoolLeg3"> 
+            <transforms>
+                <translate value3="-0.30 -0.75 0" />
+                <rotate value3="25 0 0" />
+                <translate value3= "0.2 0 -0.30" />
+            </transforms>
+            <children>   
+                <primitive>          
+                    <cylinder base="0.1" top="0.1" height="1.5" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="stoolLeg4"> 
+            <transforms>
+                <scale value3= "-1 1 -1" />
+            </transforms>
+            <children>   
+                <noderef id="stoolLeg3" />
+            </children>
+        </node>
+
+
+        <node id="stool1">
+
+            <materialref id="wood" />
+
+            <transforms>
+                <translate value3="-10 8.8 10" />
+                <rotate value3="0 30 0" />
+                <scale value3="2 2 2" />
+            </transforms>
+
+            <children>
+                <noderef id="stoolLeg1" />
+                <noderef id="stoolLeg2" />  
+                <noderef id="stoolLeg3" />   
+                <noderef id="stoolLeg4" />         
+                <primitive>          
+                    <cylinder base="0.5" top="0.5" height="0.25" slices="32" stacks="32" />
+                </primitive> 
+            </children>
+        </node>
+
+
+        <node id="stool2">
+
+            <materialref id="wood" />
+
+            <transforms>
+                <translate value3="10 8.5 -10" />
+                <rotate value3="0 30 0" />
+                <scale value3="2 2 2" />
+            </transforms>
+
+            <children>
+                <noderef id="stoolLeg1" />
+                <noderef id="stoolLeg2" />  
+                <noderef id="stoolLeg3" />  
+                <noderef id="stoolLeg4" />          
+                <primitive>          
+                    <cylinder base="0.5" top="0.5" height="0.25" slices="32" stacks="32" />
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="tvSupport">
+             <transforms>
+                <translate value3="0 3.8 0" />
+                <rotate value3="90 180 0" />
+            </transforms>
+            <children>
+                <primitive>          
+                    <polygon radius="10.5" slices="100" stacks="3" color_c="0 0 0 1" color_p="0 0 0 1"/>
+                </primitive> 
+            </children>
+        </node>
+            
+        <node id="tv">
+            <materialref id="video1"/>
+             <transforms>
+                <translate value3="0 26.5 0" />
+                <rotate value3="0 45 0" />
+            </transforms>
+            <children>
+                <noderef id="tvSupport"/>
+                <primitive>          
+                    <cylinder base="8.5" top="10.5" height="7.5" slices="100" stacks="100" />
+                </primitive> 
+            </children>
+        </node>
+
+        <node id="spotlight">
+            <materialref id="spotlight" />
+            <children>
+                <primitive>
+                    <cylinder base="0.9" top="0.5" height="1.8" slices="32" stacks="32" />
+                </primitive>
+            </children>
+        </node>
+
+        <node id="spotlight1">
+            <transforms>
+                <translate value3="22 29.5 0" />
+                <rotate value3="0 0 -50" />
+            </transforms>
+            <children>
+                <noderef id="spotlight" />
+            </children>
+        </node>
+
+        <node id="spotlight2">
+            <transforms>
+                <translate value3="-22 29.5 0" />
+                <rotate value3="0 0 50" />
+            </transforms>
+            <children>
+                <noderef id="spotlight" />
+            </children>
+        </node>
+
+        <node id="spotlight3">
+            <transforms>
+                <translate value3="0 29.5 -22" />
+                <rotate value3="-50 0 0" />
+            </transforms>
+            <children>
+                <noderef id="spotlight" />
+            </children>
+        </node>
+
+        <node id="spotlight4">
+            <transforms>
+                <translate value3="0 29.5 22" />
+                <rotate value3="50 0 0" />
+            </transforms>
+            <children>
+                <noderef id="spotlight" />
+            </children>
+        </node>
+
+        <node id="spotlight5">
+            <transforms>
+                <translate value3="-20 29.5 22" />
+                <rotate value3="-30 0 35" />
+            </transforms>
+            <children>
+                <noderef id="spotlight" />
+            </children>
+        </node>
+
+        <node id="spotlights">
+            <children>
+                <noderef id="spotlight1" />
+                <noderef id="spotlight2" />
+                <noderef id="spotlight3" />
+                <noderef id="spotlight4" />
+                <noderef id="spotlight5" />
+            </children>
+        </node>
+
+        <node id="stairs1">
+            <transforms>
+                <translate value3="-28.5 0 0" />
+                <rotate value3="0 180 0" />
+                <scale value3="0.15 0.25 0.05" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="stairs2">
+            <transforms>
+                <translate value3="28.5 0 0" />
+                <scale value3="0.15 0.25 0.05" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="seatsStep">
+            <materialref id="seats" />
+
+            <children>             
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="100 5 20"/>
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="seatsRight">
+            <transforms>
+                <translate value3="15 0 0" />
+                <rotate value3="0 180 0" />
+                <scale value3="0.8 1 1" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="seatsBack">
+            <transforms>
+                <translate value3="0 0 -15" />
+                <rotate value3="0 -90 0" />
+                <scale value3="0.8 1 1" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="seatsFront">
+            <transforms>
+                <translate value3="0 0 15" />
+                <rotate value3="0 90 0" />
+                <scale value3="0.8 1 1" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="seatsLeft">
+            <transforms>
+                <translate value3="-15 0 0" />
+                <scale value3="0.8 1 1" />
+            </transforms>
+            <children> 
+                <noderef id="seatsStep1" />
+                <noderef id="seatsStep2" />
+                <noderef id="seatsStep3" />
+                <noderef id="seatsStep4" />
+            </children>
+        </node>
+
+        <node id="seatsStep1">
+			<transforms>
+				<translate value3="-69.9 2.6 0" />
+                <rotate value3="0 90 0" />
+                <scale value3="1 1 2" />
+            </transforms> 
+            <children>             
+                <noderef id="seatsStep" />
+            </children> 
+        </node>
+
+        <node id="seatsStep2">
+			<transforms>
+				<translate value3="-74.9 7.6 0" />
+                <rotate value3="0 90 0" />
+                <scale value3="1 1 1.5" />
+            </transforms> 
+            <children>             
+                <noderef id="seatsStep" />
+            </children> 
+        </node>
+
+        <node id="seatsStep3">
+			<transforms>
+				<translate value3="-79.9 12.6 0" />
+                <rotate value3="0 90 0" />
+            </transforms> 
+            <children>             
+                <noderef id="seatsStep" />
+            </children> 
+        </node>
+
+        <node id="seatsStep4">
+			<transforms>
+				<translate value3="-84.9 17.6 0" />
+                <rotate value3="0 90 0" />
+                <scale value3="1 1 0.5" />
+            </transforms> 
+            <children>             
+                <noderef id="seatsStep" />
+            </children> 
+        </node>
+
+
+        <node id="sky">
+            <children>
+                <primitive>
+                    <skybox size="250 200 250" center= "7.5 100.2 7.5" emissive="0 0 0 1"
+                    intensity="100"  
+                    front="skyboxSides" back="skyboxSides"
+                    up="skyboxSides" down="lightWood"
+                    left="skyboxSides"  right="skyboxSides"/>
+                </primitive>
+            </children>
+        </node>
+
+
+        <node id="cameraFar">
+			<transforms>
+                <translate value3="-10 10 25" />
+                <rotate value3="0 -30 0" />
+            </transforms> 
+
+            <materialref id="spotlight" />
+			
+            <children>
+                <noderef id="cameraPiece3"/>       
+                <noderef id="cameraLeg1" />
+                <noderef id="cameraLeg2" />
+            </children> 
+        </node>
+
+        <node id="cameraClose">
+			<transforms>
+                <translate value3="-10 10 25" />
+                <rotate value3="0 -30 0" />
+            </transforms> 
+
+            <materialref id="spotlight" />
+			
+            <children>
+                <noderef id="cameraPiece1"/>       
+                <noderef id="cameraPiece2" />
+                <noderef id="cameraLeg1" />
+                <noderef id="cameraLeg2" />
+            </children> 
+        </node>
+
+        <node id="cameraPiece1">
+            <transforms>
+                <translate value3="0 0.65 -1" />
+                <rotate value3="90.0 0.0 0.0" />
+            </transforms> 
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.55" top="0.25" height="1.4" slices="32" stacks="32" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="cameraPiece2">
+            <transforms>
+                <translate value3="0 0.65 0" />
+            </transforms> 
+			
+            <children>             
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="1.1 1.1 1.7" parts_x="10" parts_y="10" parts_z="10" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="cameraPiece3">
+            <transforms>
+                <translate value3="0 0.8 0.5" />
+            </transforms> 
+			
+            <children>             
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="2 1.1 1.7" parts_x="10" parts_y="10" parts_z="10" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="cameraLeg1">
+            <transforms>
+                <translate value3="-0.5 -5 0" />
+                <rotate value3="0.0 0.0 -5.0" />
+            </transforms> 
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.1" top="0.1" height="11" slices="32" stacks="32" />
+                </primitive>
+            </children> 
+        </node>
+
+        <node id="cameraLeg2">
+            <transforms>
+                <translate value3="0.5 -5 0" />
+                <rotate value3="0.0 0.0 5.0" />
+            </transforms> 
+			
+            <children>             
+                <primitive>
+                    <cylinder base="0.1" top="0.1" height="11" slices="32" stacks="32" />
+                </primitive>
+            </children> 
+        </node>
+
+
+        <node id="chair1">
+            <transforms>
+                <translate value3="10 1.7 30"/>
+                <scale value3="2.5 2.5 2.5"/>
+             <rotate value3="0.0 -45 0.0" /> 
+            </transforms>
+            <materialref id="lightWood" />
+            <children>
+                <noderef id="leg1"/>
+                <noderef id="leg2"/>
+                <noderef id="leg3"/>
+                <noderef id="leg4"/>
+                <noderef id="chairSeat"/>
+                <noderef id="chairBack"/>
+            </children>
+        </node>
+
+
+        <node id="chair2">
+            <transforms>
+                <translate value3="6 1.7 32"/>
+                <scale value3="2.5 2.5 2.5"/>
+             <rotate value3="0.0 -125 0.0" /> 
+            </transforms>
+            <materialref id="lightWood" />
+            <children>
+                <noderef id="leg1"/>
+                <noderef id="leg2"/>
+                <noderef id="leg3"/>
+                <noderef id="leg4"/>
+                <noderef id="chairSeat"/>
+                <noderef id="chairBack"/>
+            </children>
+        </node>
+
+        <node id="leg">
+            <children>
+                <primitive>
+                <cylinder base="0.1" top="0.1" height="1.2" slices="32" stacks="32"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="leg1">
+            <children>
+                <noderef id="leg"/>
+            </children>
+        </node>
+
+        <node id="leg2">
+            <transforms>
+                <translate value3="1 0 0"/>
+            </transforms>
+            <children>
+                <noderef id="leg"/>
+            </children>
+        </node>
+
+        <node id="leg3">
+            <transforms>
+            <translate value3="1 0 1"/>
+            </transforms>
+            <children>
+                <noderef id="leg"/>
+            </children>
+        </node>
+
+        <node id="leg4">
+            <transforms>
+            <translate value3="0 0 1"/>
+            </transforms>
+            <children>
+                <noderef id="leg"/>
+            </children>
+        </node>
+
+        <node id="chairSeat">
+            <transforms>
+                <translate value3="0.5 0.5 0.5"/>
+                <scale value3="1.5 0.2 1.5"/>
+            </transforms>
+            <children>
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="0.8 1 0.8"/>
+                </primitive>
+            </children>
+        </node>
+
+        <node id="chairBack">
+            <transforms>
+                <translate value3="1.2 1.2 0.5"/>
+                <scale value3="0.2 2 1.5"/>
+                <rotate value3="0 0 -10"/>
+            </transforms>
+            <children>
+                <primitive>
+                    <box xyz1="0 0 0" xyz2="0.8 0.7 0.8"/>
+                </primitive>
+            </children>
+        </node>
+
+    </graph> 
+</yaf> 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<yaf> 
+
+	<!-- Credits of the original file go to Group 1, class 1 of course LAIG school year 2013/2014, FEUP, University of Porto -->
+	
+    <globals background="0 0 0 1" ambient="0 0 0 1" /> 
+
+    <fog color="1.0 1.0 1.0 1.0" near="0.0" far="100.0" />
+
+    <cameras initial="top" > 
+        
+        <perspective id="perspective2" 
+            angle="60" 
+            near="0.1" 
+            far="1000" 
+            location="-80 30 -90"
+            target="-85 10 -101" />
+    </cameras> 
+
+    <textures>        
+    </textures> 
+
+    <materials> 	
+    </materials> 
+
+    <graph rootid="scene"> 
+
+        <node id="scene"> 
+            <children> 
+
+            </children> 
+        </node>
+       
+    </graph> 
+</yaf> 
